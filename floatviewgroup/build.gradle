@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'float_view_group' //bintray上的项目名
+
+    publishedGroupId = 'cn.lemon'
+    artifact = 'floatviewgroup'
+    libraryVersion = '1.0.0'
+
+    siteUrl = 'https://github.com/llxdaxia/FloatViewGroup'
+    gitUrl = 'https://github.com/llxdaxia/FloatViewGroup.git'
+
+    libraryName = 'FloatViewGroup' //项目名字，没什么用
+    libraryDescription = 'A Group View Float' //项目描述，没什么用
+
+    developerId = 'Lemon'
+    developerName = 'Lemon'
+    developerEmail = 'daxiallx@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'https://raw.githubusercontent.com/llxdaxia/GradleScript/master/install_v1.gradle'
+apply from: 'https://raw.githubusercontent.com/llxdaxia/GradleScript/master/bintray_v1.gradle'
